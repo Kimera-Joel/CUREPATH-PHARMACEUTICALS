@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+  <meta name="description" content="About CurePath Pharmaceutical — our history, mission and commitment to affordable healthcare.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <meta property="og:title" content="About — CurePath Pharmaceutical">
+  <meta property="og:description" content="Learn about CurePath Pharmaceutical, our mission to provide affordable, high-quality medicines and services.">
+  <meta property="og:image" content="Assets folder/logo 1.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="Css folder/style.css">
+</head>
+<body>
+   <section>
+      <div class="logo">
+        <img src="Assets folder/logo 1.png" alt="CurePath logo">
+    <nav class="nav">
+      <a href="Index.html">Home</a>
+      <a href="About.html">About</a>
+      <a href="Contact.html">Contact</a>
+      <div class="search-container">
+          <input type="search" placeholder="Search..." aria-label="Search">
+          <button type="button" aria-label="Submit search">
+              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+          </button>
+      </div>
+    </nav>
+      </div>
+      <header class="banner banner--about" role="banner" aria-label="About banner">
+        <div class="banner__media">
+            <video src="Assets folder/video 2.mp4" autoplay muted loop playsinline></video>
+        </div>
+        <div class="banner__overlay"></div>
+        <div class="banner__content">
+            <h1>About CurePath Pharmaceutical</h1>
+            <p>Our history, mission and commitment to affordable healthcare</p>
+        </div>
+      </header>
+   </section>
+   <section>
+      <div class="text">
+     <h3>Background Information</h3>
+     <p>
+     CurePath pharmaceutical began in <strong>2003</strong> by <b>Dr. Joe Jonas</b> and <b> Dr. Edward Hart</b> who had come as volunteers of the Red Cross in 2000
+     The shortage and high prices of medicine inspired them to come up with an idea to adress those problems and so they created <b><u>CurePath Medical Center</u></b> in <b>Wantoni,Mukono</b> and would import drugs from outside and provide it to people at affordable prices
+     On <b>16<sup>th</sup> May 2003</b> Dr.Joe Jonas and Dr.Edward Hart commissioned the first factory in Jinja and from then on CurePath pharmaceutical has never looked back
+     But as time went on we evolved from just producing high quality affordable medication to providing different medical services at affordable prices for everyone
+     We also expanded a to other areas of the country where we have different branches such as <b>Gulu, Soroti, Mpigi, Masaka, Mbale, Mbarara e.t.c. </b>
+     </p>
+     </div>
+   </section>
+   <section class="text">
+      <div>
+        <h3>Our Mission</h3>
+        <p>
+          To make quality healthcare accessible to everyone by delivering trusted medicines
+          and promoting wellness across all communities.
+        </p>
+      </div>
+      <div>
+        <h3>Our Vision</h3>
+        <p>
+          To build a healthier world where every person has access to reliable and affordable medicines.
+        </p>
+      </div>
+      <div>
+        <h3>Our Goals</h3>
+        <ul class="goals">
+          <li>To improve access to medicine</li>
+          <li>To promote health awareness</li>
+          <li>To support local healthcare systems</li>
+          <li>To maintain high product quality</li>
+          <li>To encourage innovation for local needs</li>
+          <li>To sustain environmental responsibility</li>
+          <li>To empower through employment</li>
+        </ul>
+      </div>
+   <section>
+   <div class="text">
+     <h2>Our Services</h2>
+     <p>At CurePath pharmaceuticals we offer different services</p>
+   </div>
+   <section class="features">
+   <div>
+     <img src="Assets folder/image 7.jpeg" alt="">
+     <h2>High Quality and Affordable Medicine</h2>
+     <p>Our primary service is to provide hig quality and afforable medicine to people</p>
+   </div>
+   <div>
+     <img src="Assets folder/image a3.jpg" alt="">
+     <h2>Medical Consultancy</h2>
+     <p>We tend to bring medical experts to help people with questions about their health and also offer advice about health related problems</p>
+   </div>
+   <div>
+     <img src="Assets folder/image a2.jpg" alt="">
+     <h2>Testing and Scanning</h2>
+     <p>We offer testing and scanning for different diseases and offer the right medication for the health problem detected</p>
+   </div>
+   </section>
+    <section class="newsletter">
+        <h3>Stay Updated with CurePath</h3>
+        <p>Subscribe to our newsletter for health tips and company updates</p>
+        <form class="newsletter-form" id="newsletter-form">
+            <input type="email" placeholder="Enter your email" required aria-label="Email for newsletter">
+            <button type="submit" class="accept">Subscribe</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>WE ARE YOUR PATH TO BETTER HEALTH</p>
+        <p>&copy; CurePath Pharmaceutical. 2025</p>
+    </footer>
+
+    <div class="cookie-consent" id="cookie-consent">
+        <p>We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.</p>
+        <div class="buttons">
+            <button class="decline" onclick="declineCookies()">Decline</button>
+            <button class="accept" onclick="acceptCookies()">Accept</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (!localStorage.getItem('cookieConsent')) {
+                setTimeout(() => {
+                    document.getElementById('cookie-consent').classList.add('show');
+                }, 1000);
+            }
+        });
+
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            document.getElementById('cookie-consent').classList.remove('show');
+        }
+
+        function declineCookies() {
+            localStorage.setItem('cookieConsent', 'declined');
+            document.getElementById('cookie-consent').classList.remove('show');
+        }
+
+        
+        document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            alert('Thank you for subscribing! We\'ll keep you updated.');
+            this.reset();
+        });
+
+        
+        const searchInput = document.querySelector('.search-container input');
+        const searchButton = document.querySelector('.search-container button');
+
+        function performSearch() {
+            const query = searchInput.value.trim();
+            if (query) {
+                
+                alert('Searching for: ' + query);
+            }
+        }
+
+        searchButton.addEventListener('click', performSearch);
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+    </script>
+</body>
+</html>

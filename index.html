@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <meta name="description" content="CurePath Pharmaceutical — Providing high quality, affordable medicines and medical services across Uganda.">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    
+    <meta property="og:title" content="CurePath Pharmaceutical — Home">
+    <meta property="og:description" content="Providing high quality and affordable medical care for individuals and families.">
+    <meta property="og:image" content="Assets folder/logo 1.png">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="Css folder/style.css">
+</head>
+<body>
+    <section>
+        <div class="logo">   
+            <img src="Assets folder/logo 1.png" alt="CurePath logo">
+            <nav class="nav">
+                <a href="index.htmlc">Home</a>
+                <a href="About.html">About</a>
+                <a href="Contact.html">Contact</a>
+                <div class="search-container">
+                    <input type="search" placeholder="Search..." aria-label="Search">
+                    <button type="button" aria-label="Submit search">
+                        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </nav>
+        </div>
+        <header class="banner banner--home" role="banner" aria-label="Home banner">
+            <div class="banner__media">
+                <video src="Assets folder/video 1.mp4" autoplay muted loop playsinline></video>
+            </div>
+            <div class="banner__overlay"></div>
+            <div class="banner__content">
+                <h1>Providing High Quality and Affordable Medical Care</h1>
+                <p>Committed to every individual and family</p>
+            </div>
+        </header>
+    </section>
+    <section>
+        <div class="text">
+            <h1>Providing High Quality and Affordable Medical Care for each <b>Individual</b> and <b>Family</b></h1>
+            <p>We are a global pharmaceutical company aim at setting new standards in Health Care</p>
+        </div>
+        <div class="btn">
+            <button>LEARN MORE</button>
+            <p>WE PROMISE YOU HIGH QUALITY HEALTH CARE</p>
+        </div>
+    </section>
+    <section>
+        <div class="feature">
+            <img src="Assets folder/director.jpg" alt="">
+            <div class="feature__text">
+                <p>"At CurePath pharmaceutical we don't just stop at providing high quality medication, we also aim at making sure that they are affordable for everyone as a way of improving the Health Care</p>
+                <p>We care about our customers and that is why we offer other health services at our different branches that are affordable to everyone and some even free of charge"</p>
+                <p><b>MR. RYAN STONE</b></p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="images">
+        <img src="Assets folder/image 6.jpeg" alt="">
+        <img src="Assets folder/image 8.jpeg" alt="">
+        </div>
+    </section>
+    <section class="newsletter">
+        <h3>Stay Updated with CurePath</h3>
+        <p>Subscribe to our newsletter for health tips and company updates</p>
+        <form class="newsletter-form" id="newsletter-form">
+            <input type="email" placeholder="Enter your email" required aria-label="Email for newsletter">
+            <button type="submit" class="accept">Subscribe</button>
+        </form>
+    </section>
+    
+    <footer>
+        <h4>WE ARE YOUR PATH TO BETTER HEALTH</h4>
+        <p>&copy; CurePath Pharmaceutical</p>
+    </footer>
+
+    <div class="cookie-consent" id="cookie-consent">
+        <p>We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.</p>
+        <div class="buttons">
+            <button class="decline" onclick="declineCookies()">Decline</button>
+            <button class="accept" onclick="acceptCookies()">Accept</button>
+        </div>
+    </div>
+
+    <script>
+        // Cookie consent functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            if (!localStorage.getItem('cookieConsent')) {
+                setTimeout(() => {
+                    document.getElementById('cookie-consent').classList.add('show');
+                }, 1000);
+            }
+        });
+
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            document.getElementById('cookie-consent').classList.remove('show');
+        }
+
+        function declineCookies() {
+            localStorage.setItem('cookieConsent', 'declined');
+            document.getElementById('cookie-consent').classList.remove('show');
+        }
+
+        // Newsletter subscription
+        document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            // Here you would typically send this to your server
+            alert('Thank you for subscribing! We\'ll keep you updated.');
+            this.reset();
+        });
+
+        // Search functionality
+        const searchInput = document.querySelector('.search-container input');
+        const searchButton = document.querySelector('.search-container button');
+
+        function performSearch() {
+            const query = searchInput.value.trim();
+            if (query) {
+                // Here you would typically send this to your search endpoint
+                alert('Searching for: ' + query);
+                // For demo purposes, you could redirect to a search results page
+                // window.location.href = '/search?q=' + encodeURIComponent(query);
+            }
+        }
+
+        searchButton.addEventListener('click', performSearch);
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+    </script>
+</body>
+</html>
